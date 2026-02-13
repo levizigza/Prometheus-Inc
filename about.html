@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The origin story of Prometheus — inspired by the eternal myth of the fire-bringer, we create machines and cities that elevate humanity." />
+  <meta name="keywords" content="about prometheus, company story, founding vision, robotics company, sustainable architecture" />
+  <meta name="author" content="Prometheus" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://prometheus-inc.org/about" />
+  <title>About — Prometheus</title>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://prometheus-inc.org/about" />
+  <meta property="og:title" content="About — Prometheus" />
+  <meta property="og:description" content="The origin story of Prometheus — inspired by the eternal myth of the fire-bringer, we create machines and cities that elevate humanity." />
+  <meta property="og:image" content="https://prometheus-inc.org/assets/og-image.jpg" />
+  <meta property="og:locale" content="en_US" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://prometheus-inc.org/about" />
+  <meta name="twitter:title" content="About — Prometheus" />
+  <meta name="twitter:description" content="The origin story of Prometheus — inspired by the eternal myth of the fire-bringer, we create machines and cities that elevate humanity." />
+  <meta name="twitter:image" content="https://prometheus-inc.org/assets/og-image.jpg" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="about">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-text" id="cursorText">View</div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav" role="navigation" aria-label="Main">
+      <a href="index.html" class="nav-logo magnetic" data-strength="20">
+        <img src="assets/logo.png" alt="Prometheus" /><span>Prometheus</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="vision.html" class="nav-link magnetic" data-strength="15">Vision</a>
+        <a href="about.html" class="nav-link magnetic" data-strength="15">About</a>
+        <a href="robotics.html" class="nav-link magnetic" data-strength="15">Robotics</a>
+        <a href="cities.html" class="nav-link magnetic" data-strength="15">Cities</a>
+        <a href="philosophy.html" class="nav-link magnetic" data-strength="15">Philosophy</a>
+        <a href="projects.html" class="nav-link magnetic" data-strength="15">Projects</a>
+        <a href="contact.html" class="nav-link nav-link--cta magnetic" data-strength="10">Get in touch</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="page-hero-bg"></div>
+      <div class="container">
+        <span class="page-hero-label">Our Origin</span>
+        <h1 class="page-hero-title">The eternal <em>ascent.</em></h1>
+        <p class="page-hero-desc">In Greek mythology, Prometheus defied the gods to bring fire — knowledge, technology, the spark of progress — to humanity. We carry that same spirit.</p>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT: MYTH + INTERACTIVE SVG ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="about-layout">
+
+          <div class="about-text">
+            <h2 data-animate="fade-up">The myth that<br/>drives us.</h2>
+            <p data-animate="fade-up">Prometheus was a Titan who saw humanity shivering in darkness, powerless before the gods and the wild. He dared to climb Mount Olympus and steal fire — not for himself, but for them. That fire was more than flame: it was knowledge, craft, technology, the very spark of civilization.</p>
+            <p data-animate="fade-up">For this act of defiance, Zeus condemned Prometheus to eternal punishment — chained to a rock, his liver devoured each day, only to regenerate and suffer again. Yet Prometheus never regretted his gift. The sacrifice was the point. Progress demands courage, and courage demands sacrifice.</p>
+            <p data-animate="fade-up">We carry that myth forward. Like Prometheus pushing the boulder upward against gravity, against convention, against the easy path — we believe the most meaningful work is the hardest. Every sentient machine we envision, every living city we design, every regenerative system we build is another step up the mountain.</p>
+          </div>
+
+          <div class="about-animation" data-animate="fade-up">
+            <div class="prometheus-scene" id="prometheusScene" role="img" aria-label="Interactive: drag upward to help Prometheus climb the mountain">
+
+              <svg id="promSvg" class="prometheus-svg" viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="mountainGrad" x1="200" y1="60" x2="200" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#e8a735"/>
+                    <stop offset="100%" stop-color="#0b0b0f" stop-opacity="0"/>
+                  </linearGradient>
+                  <radialGradient id="boulderGrad" cx="0.35" cy="0.3" r="0.6">
+                    <stop offset="0%" stop-color="#8a8078"/>
+                    <stop offset="50%" stop-color="#5c554e"/>
+                    <stop offset="100%" stop-color="#3a352f"/>
+                  </radialGradient>
+                  <radialGradient id="boulderGlow" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0%" stop-color="#e8a735" stop-opacity="0.5"/>
+                    <stop offset="100%" stop-color="#e8a735" stop-opacity="0"/>
+                  </radialGradient>
+                  <filter id="sparkGlow">
+                    <feGaussianBlur stdDeviation="2" result="g"/>
+                    <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+
+                <!-- Mountain body -->
+                <path d="M0 500 L200 60 L400 500 Z" fill="url(#mountainGrad)" opacity="0.1"/>
+
+                <!-- Climbing path (left slope) — visual reference -->
+                <line x1="80" y1="455" x2="200" y2="75" stroke="rgba(232,167,53,0.08)" stroke-width="1" stroke-dasharray="4 8"/>
+
+                <!-- Step markers along the climb path -->
+                <line x1="95" y1="430" x2="110" y2="426" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="112" y1="390" x2="127" y2="386" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="128" y1="350" x2="143" y2="346" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="143" y1="310" x2="158" y2="306" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="155" y1="270" x2="170" y2="266" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="166" y1="230" x2="181" y2="226" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="175" y1="190" x2="190" y2="186" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+                <line x1="183" y1="150" x2="198" y2="146" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
+
+                <!-- Summit glow -->
+                <circle cx="200" cy="60" r="8" fill="#e8a735" opacity="0.12"/>
+                <circle cx="200" cy="60" r="3" fill="#e8a735" opacity="0.4"/>
+                <text x="200" y="45" text-anchor="middle" fill="#e8a735" font-size="8" font-family="Inter, sans-serif" letter-spacing="0.15em" opacity="0.4">SUMMIT</text>
+
+                <!-- Prometheus figure -->
+                <g id="promFigure">
+                  <circle id="promHead" cx="0" cy="-48" r="8" fill="none" stroke="#f0ede8" stroke-width="1.5"/>
+                  <line id="promTorso" x1="0" y1="-40" x2="0" y2="-14" stroke="#f0ede8" stroke-width="1.8" stroke-linecap="round"/>
+                  <line id="promArmFront" x1="0" y1="-34" x2="18" y2="-28" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round"/>
+                  <line id="promArmBack" x1="0" y1="-34" x2="-10" y2="-22" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                  <line id="promLegFront" x1="0" y1="-14" x2="12" y2="4" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round"/>
+                  <line id="promLegBack" x1="0" y1="-14" x2="-8" y2="2" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+                </g>
+
+                <!-- Boulder -->
+                <g id="promBoulder">
+                  <circle cx="0" cy="0" r="20" fill="url(#boulderGrad)" stroke="rgba(232,167,53,0.2)" stroke-width="0.5"/>
+                  <circle cx="-5" cy="-4" r="5" fill="rgba(255,255,255,0.04)"/>
+                  <circle cx="6" cy="5" r="3" fill="rgba(0,0,0,0.12)"/>
+                  <circle cx="0" cy="0" r="28" fill="url(#boulderGlow)" opacity="0"/>
+                </g>
+
+                <!-- Fire sparks (animated by JS) -->
+                <g id="promSparks" filter="url(#sparkGlow)">
+                  <circle class="spark spark-1" r="2" fill="#e8a735" opacity="0"/>
+                  <circle class="spark spark-2" r="1.5" fill="#f5c961" opacity="0"/>
+                  <circle class="spark spark-3" r="2.5" fill="#c4722a" opacity="0"/>
+                  <circle class="spark spark-4" r="1.8" fill="#fad68a" opacity="0"/>
+                  <circle class="spark spark-5" r="1.2" fill="#e8a735" opacity="0"/>
+                  <circle class="spark spark-6" r="2" fill="#f5c961" opacity="0"/>
+                </g>
+              </svg>
+
+              <!-- Progress bar (HTML, below SVG) -->
+              <div class="prom-progress">
+                <div class="prom-progress-fill" id="promProgressBar"></div>
+                <div class="prom-progress-label" id="promProgressLabel">0%</div>
+              </div>
+
+              <!-- Hint -->
+              <div class="prom-hint" id="promHint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                <span>Click &amp; drag to climb</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TIMELINE ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-label" data-animate="fade-up">Our Journey</span>
+          <h2 class="section-title" data-animate="fade-up">From spark<br/>to mission.</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.0">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">The Spark</span>
+              <h3 class="timeline-title">The idea ignites</h3>
+              <p>The idea to bridge robotics, architecture, and ecology — three disciplines that, together, could forge something greater than any one alone.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.1">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">First Fire</span>
+              <h3 class="timeline-title">The philosophy takes shape</h3>
+              <p>Developing the foundational philosophy of sentient machines — robots with personality, empathy, and the capacity to grow alongside humanity.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.2">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">The Ascent</span>
+              <h3 class="timeline-title">The vision expands</h3>
+              <p>Expanding vision to solar punk cities and mechatronic architecture — living environments that breathe, adapt, and regenerate.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-animate="fade-up" data-delay="0.3">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">The Mission</span>
+              <h3 class="timeline-title">A regenerative civilization</h3>
+              <p>Building toward a regenerative civilization where sentient machines, living cities, and human creativity form an inseparable whole.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VALUES / PRINCIPLES ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-label" data-animate="fade-up">Our Values</span>
+          <h2 class="section-title" data-animate="fade-up">Principles that<br/>guide the climb.</h2>
+        </div>
+        <div class="principles-grid">
+          <div class="principle-card tilt-card" data-animate="fade-up" data-delay="0.0">
+            <div class="principle-card-glow"></div>
+            <div class="principle-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Courage</h3>
+            <p>Defying convention to bring impossible visions to life. Like Prometheus, we choose the harder path because it leads higher.</p>
+          </div>
+          <div class="principle-card tilt-card" data-animate="fade-up" data-delay="0.1">
+            <div class="principle-card-glow"></div>
+            <div class="principle-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Empathy</h3>
+            <p>Machines that understand, cities that care. Technology should feel the weight of the human condition and respond with grace.</p>
+          </div>
+          <div class="principle-card tilt-card" data-animate="fade-up" data-delay="0.2">
+            <div class="principle-card-glow"></div>
+            <div class="principle-card-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><path d="M2 12c2-3 5-3 7 0s5 3 7 0 5-3 7 0" opacity="0.3"/></svg>
+            </div>
+            <h3>Regeneration</h3>
+            <p>Building systems that restore more than they consume. Every structure we design, every machine we envision, gives back to the living world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TEAM SECTION ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-label" data-animate="fade-up">Our Team</span>
+          <h2 class="section-title" data-animate="fade-up">The fire<br/>keepers.</h2>
+        </div>
+        
+        <!-- Team Grid -->
+        <div class="team-grid">
+          <div class="team-member" data-animate="fade-up" data-delay="0">
+            <div class="team-member-photo">
+              <div class="team-avatar"></div>
+            </div>
+            <h3 class="team-member-name">Founder & Visionary</h3>
+            <p class="team-member-role">Chief Fire Bearer</p>
+            <p class="team-member-bio">Drawing inspiration from the eternal myth of Prometheus, our founder envisions a future where humanity's boldest creations — sentient machines and living cities — become partners in building a regenerative civilization.</p>
+            <div class="team-member-quote">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" opacity="0.3"><path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/></svg>
+              <p>"The fire we steal from the gods is not meant to be hoarded — it's meant to be shared, multiplied, and used to light a thousand more flames."</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Join the Team CTA -->
+        <div class="team-cta" data-animate="fade-up">
+          <h3>Join the Climb</h3>
+          <p>We're seeking exceptional individuals who share our vision: engineers, designers, architects, philosophers, and dreamers who believe technology can elevate humanity rather than replace it.</p>
+          <a href="contact.html" class="btn btn--outline magnetic" data-strength="10">Explore Opportunities</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner" data-animate="fade-up">
+          <h2 class="cta-banner-title">Ready to join<br/>the <em>ascent?</em></h2>
+          <p>We&rsquo;re looking for collaborators, dreamers, and builders who share the Promethean spirit — the belief that the future can be forged, not merely inherited.</p>
+          <div class="cta-banner-actions">
+            <a href="contact.html" class="btn btn--primary btn--large magnetic" data-strength="8">
+              <span class="btn-text">Get in touch</span>
+              <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+            </a>
+            <a href="vision.html" class="btn btn--ghost magnetic" data-strength="8">
+              <span class="btn-text">Explore our vision</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="" class="footer-logo" />
+          <span class="footer-name">Prometheus</span>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="vision.html">Vision</a>
+            <a href="about.html">About</a>
+            <a href="robotics.html">Robotics</a>
+            <a href="cities.html">Cities</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Prometheus. All rights reserved. • <a href="privacy.html">Privacy Policy</a></p>
+        <p class="footer-tagline">Robotics, architecture, and humanity in harmony.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

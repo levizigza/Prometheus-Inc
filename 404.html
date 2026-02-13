@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>404 — Page Not Found | Prometheus</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="404">
+
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <nav class="nav" role="navigation" aria-label="Main">
+      <a href="index.html" class="nav-logo magnetic" data-strength="20">
+        <img src="assets/logo.png" alt="Prometheus" /><span>Prometheus</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="vision.html" class="nav-link magnetic" data-strength="15">Vision</a>
+        <a href="about.html" class="nav-link magnetic" data-strength="15">About</a>
+        <a href="robotics.html" class="nav-link magnetic" data-strength="15">Robotics</a>
+        <a href="cities.html" class="nav-link magnetic" data-strength="15">Cities</a>
+        <a href="philosophy.html" class="nav-link magnetic" data-strength="15">Philosophy</a>
+        <a href="projects.html" class="nav-link magnetic" data-strength="15">Projects</a>
+        <a href="contact.html" class="nav-link nav-link--cta magnetic" data-strength="10">Get in touch</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- 404 Hero -->
+    <section class="error-section">
+      <div class="container">
+        <div class="error-content">
+          <div class="error-number" data-animate="fade-up">404</div>
+          <h1 class="error-title" data-animate="fade-up" data-delay="0.1">Lost in the <em>cosmos.</em></h1>
+          <p class="error-desc" data-animate="fade-up" data-delay="0.2">The page you're looking for has drifted beyond our reach. Like Prometheus ascending Mount Olympus, you've ventured into uncharted territory.</p>
+          
+          <div class="error-actions" data-animate="fade-up" data-delay="0.3">
+            <a href="index.html" class="btn btn--primary magnetic" data-strength="10">Return Home</a>
+            <a href="vision.html" class="btn btn--outline magnetic" data-strength="10">Explore Our Vision</a>
+          </div>
+
+          <div class="error-suggestions" data-animate="fade-up" data-delay="0.4">
+            <h3>Popular pages:</h3>
+            <div class="error-links">
+              <a href="robotics.html" class="error-link">Robotics</a>
+              <a href="cities.html" class="error-link">Solar Punk Cities</a>
+              <a href="philosophy.html" class="error-link">Philosophy</a>
+              <a href="projects.html" class="error-link">Case Studies</a>
+              <a href="contact.html" class="error-link">Contact</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative flame -->
+        <div class="error-decoration">
+          <svg viewBox="0 0 200 300" class="error-flame">
+            <defs>
+              <linearGradient id="flameGrad404" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#fad68a;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#e8a735;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#c4722a;stop-opacity:0.8" />
+              </linearGradient>
+              <filter id="flameGlow404">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <path d="M 100 280 Q 60 220 80 160 Q 90 120 100 80 Q 110 120 120 160 Q 140 220 100 280 Z" 
+                  fill="url(#flameGrad404)" 
+                  filter="url(#flameGlow404)"
+                  opacity="0.3">
+              <animate attributeName="d" 
+                       dur="3s" 
+                       repeatCount="indefinite"
+                       values="M 100 280 Q 60 220 80 160 Q 90 120 100 80 Q 110 120 120 160 Q 140 220 100 280 Z;
+                               M 100 280 Q 70 210 85 150 Q 95 110 100 70 Q 105 110 115 150 Q 130 210 100 280 Z;
+                               M 100 280 Q 60 220 80 160 Q 90 120 100 80 Q 110 120 120 160 Q 140 220 100 280 Z" />
+            </path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="" class="footer-logo" />
+          <span class="footer-name">Prometheus</span>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col"><h4>Explore</h4><a href="vision.html">Vision</a><a href="about.html">About</a><a href="robotics.html">Robotics</a><a href="cities.html">Cities</a></div>
+          <div class="footer-col"><h4>Company</h4><a href="philosophy.html">Philosophy</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Prometheus. All rights reserved.</p>
+        <p class="footer-tagline">Robotics, architecture, and humanity in harmony.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

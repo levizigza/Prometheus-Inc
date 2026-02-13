@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prometheus — Where robotics, architecture, and humanity evolve together. Sentient machines, solar punk cities, regenerative futures." />
+  <title>Prometheus — Robotics, Architecture & Humanity</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content="robotics, AI, sentient machines, solar punk, architecture, sustainable cities, regenerative design, mechatronics, artificial intelligence, future cities" />
+  <meta name="author" content="Prometheus" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://prometheus-inc.org/" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://prometheus-inc.org/" />
+  <meta property="og:title" content="Prometheus — Robotics, Architecture & Humanity" />
+  <meta property="og:description" content="Where robotics, architecture, and humanity evolve together. Sentient machines, solar punk cities, regenerative futures." />
+  <meta property="og:image" content="https://prometheus-inc.org/assets/og-image.jpg" />
+  <meta property="og:site_name" content="Prometheus" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://prometheus-inc.org/" />
+  <meta name="twitter:title" content="Prometheus — Robotics, Architecture & Humanity" />
+  <meta name="twitter:description" content="Where robotics, architecture, and humanity evolve together. Sentient machines, solar punk cities, regenerative futures." />
+  <meta name="twitter:image" content="https://prometheus-inc.org/assets/og-image.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <!-- Page Transition Overlay -->
+  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+    <div class="cursor-text" id="cursorText">View</div>
+  </div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo"><img src="assets/logo.png" alt="" /></div>
+      <div class="loader-counter" id="loaderCounter">0</div>
+      <div class="loader-bar-track"><div class="loader-bar" id="loaderBar"></div></div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <nav class="nav" role="navigation" aria-label="Main">
+      <a href="index.html" class="nav-logo magnetic" data-strength="20">
+        <img src="assets/logo.png" alt="Prometheus" />
+        <span>Prometheus</span>
+      </a>
+      <div class="nav-menu" id="navMenu">
+        <a href="vision.html" class="nav-link magnetic" data-strength="15">Vision</a>
+        <a href="about.html" class="nav-link magnetic" data-strength="15">About</a>
+        <a href="robotics.html" class="nav-link magnetic" data-strength="15">Robotics</a>
+        <a href="cities.html" class="nav-link magnetic" data-strength="15">Cities</a>
+        <a href="philosophy.html" class="nav-link magnetic" data-strength="15">Philosophy</a>
+        <a href="projects.html" class="nav-link magnetic" data-strength="15">Projects</a>
+        <a href="contact.html" class="nav-link nav-link--cta magnetic" data-strength="10">Get in touch</a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <canvas class="hero-canvas" id="heroCanvas"></canvas>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Robotics &middot; Architecture &middot; Humanity</p>
+        <h1 class="hero-title">
+          <span class="line-wrap"><span class="line-inner">Where machines</span></span>
+          <span class="line-wrap"><span class="line-inner">learn to <em>feel</em></span></span>
+          <span class="line-wrap"><span class="line-inner">&amp; cities learn</span></span>
+          <span class="line-wrap"><span class="line-inner">to <em>breathe.</em></span></span>
+        </h1>
+        <p class="hero-sub">Sentient robotics and solar punk cities for a regenerative future &mdash; a civilization as beautiful as it is alive.</p>
+        <div class="hero-actions">
+          <a href="vision.html" class="btn btn--primary magnetic" data-strength="8">
+            <span class="btn-text">Explore our vision</span>
+            <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+          </a>
+          <a href="about.html" class="btn btn--ghost magnetic" data-strength="8">
+            <span class="btn-text">Our story</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-text">Scroll to explore</div>
+        <div class="hero-scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-inner">
+        <div class="marquee-track">
+          <span>Sentient Machines</span><span class="marquee-sep">/</span>
+          <span>Solar Punk Cities</span><span class="marquee-sep">/</span>
+          <span>Mechatronic Architecture</span><span class="marquee-sep">/</span>
+          <span>Regenerative Futures</span><span class="marquee-sep">/</span>
+          <span>Human &amp; Machine Coexistence</span><span class="marquee-sep">/</span>
+          <span>Sentient Machines</span><span class="marquee-sep">/</span>
+          <span>Solar Punk Cities</span><span class="marquee-sep">/</span>
+          <span>Mechatronic Architecture</span><span class="marquee-sep">/</span>
+          <span>Regenerative Futures</span><span class="marquee-sep">/</span>
+          <span>Human &amp; Machine Coexistence</span><span class="marquee-sep">/</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PREVIEW CARDS — Linking to subpages ===== -->
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-label" data-animate="fade-up">Explore</span>
+          <h2 class="section-title" data-animate="split-lines">Three pillars of<br/>a regenerative future.</h2>
+        </div>
+        <div class="preview-grid">
+          <a href="robotics.html" class="preview-card tilt-card" data-animate="fade-up" data-delay="0.1" data-cursor="Explore">
+            <div class="preview-card-glow"></div>
+            <div class="preview-card-num">01</div>
+            <h3>Sentient Machines</h3>
+            <p>Machines with personality, empathy, and the capacity to learn, grow, and experience life &mdash; inspired by the souls of Sonny, Atom, and the Iron Giant.</p>
+            <div class="preview-card-arrow">
+              <span>Discover</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <div class="preview-card-line"></div>
+          </a>
+          <a href="cities.html" class="preview-card preview-card--green tilt-card" data-animate="fade-up" data-delay="0.2" data-cursor="Explore">
+            <div class="preview-card-glow"></div>
+            <div class="preview-card-num">02</div>
+            <h3>Solar Punk Cities</h3>
+            <p>Sustainable, technologically advanced urban ecosystems that blend with nature &mdash; echoing the mythic ideals of Atlantis and Neri Oxman's ecological vision.</p>
+            <div class="preview-card-arrow">
+              <span>Discover</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <div class="preview-card-line"></div>
+          </a>
+          <a href="vision.html" class="preview-card tilt-card" data-animate="fade-up" data-delay="0.3" data-cursor="Explore">
+            <div class="preview-card-glow"></div>
+            <div class="preview-card-num">03</div>
+            <h3>Living Laboratories</h3>
+            <p>Where humans and sentient machines coexist, explore their potential, and participate in a regenerative, vibrant society.</p>
+            <div class="preview-card-arrow">
+              <span>Discover</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </div>
+            <div class="preview-card-line"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="section section--sm section--border-t section--border-b">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat" data-animate="fade-up" data-delay="0.0">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Core Pillars</div>
+            <div class="stat-desc">Robotics, Architecture &amp; Ecology</div>
+          </div>
+          <div class="stat" data-animate="fade-up" data-delay="0.1">
+            <div class="stat-number" data-count="1">0</div>
+            <div class="stat-label">Unified Vision</div>
+            <div class="stat-desc">Machines and humans in harmony</div>
+          </div>
+          <div class="stat" data-animate="fade-up" data-delay="0.2">
+            <div class="stat-number"><span data-count="100">0</span>%</div>
+            <div class="stat-label">Regenerative</div>
+            <div class="stat-desc">Cities that restore, not deplete</div>
+          </div>
+          <div class="stat" data-animate="fade-up" data-delay="0.3">
+            <div class="stat-number">&infin;</div>
+            <div class="stat-label">Potential</div>
+            <div class="stat-desc">Evolution without endpoint</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PHILOSOPHY TEASER ===== -->
+    <section class="section" style="overflow: hidden;">
+      <div class="philosophy-bg" data-parallax data-speed="0.3"></div>
+      <div class="container">
+        <div class="philosophy-block">
+          <span class="section-label" data-animate="fade-up">Philosophy</span>
+          <blockquote class="philosophy-quote">
+            <p data-animate="split-words">&ldquo;Like Prometheus who brought fire to humanity, we seek to bring forward the light of responsible innovation &mdash; machines that evolve and self-perpetuate, cities that restore rather than deplete, and a future where the mythic and the technological are one.&rdquo;</p>
+          </blockquote>
+          <div class="philosophy-footer" data-animate="fade-up">
+            <div class="philosophy-line"></div>
+            <span>The Prometheus Manifesto</span>
+          </div>
+          <div style="margin-top: 2.5rem;" data-animate="fade-up">
+            <a href="philosophy.html" class="btn btn--ghost magnetic" data-strength="8">
+              <span class="btn-text">Read the full manifesto</span>
+              <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="cta-banner" data-animate="fade-up">
+          <h2 class="cta-banner-title">Let&rsquo;s build the<br/><em>future</em> together.</h2>
+          <p>Whether you share our vision for sentient robotics, solar punk architecture, or a regenerative future &mdash; we&rsquo;d love to hear from you.</p>
+          <div class="cta-banner-actions">
+            <a href="contact.html" class="btn btn--primary btn--large magnetic" data-strength="8">
+              <span class="btn-text">Get in touch</span>
+              <span class="btn-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg></span>
+            </a>
+            <a href="about.html" class="btn btn--ghost magnetic" data-strength="8">
+              <span class="btn-text">Learn our story</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="" class="footer-logo" />
+          <span class="footer-name">Prometheus</span>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="vision.html">Vision</a>
+            <a href="about.html">About</a>
+            <a href="robotics.html">Robotics</a>
+            <a href="cities.html">Cities</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="philosophy.html">Philosophy</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Prometheus. All rights reserved. • <a href="privacy.html">Privacy Policy</a></p>
+        <p class="footer-tagline">Robotics, architecture, and humanity in harmony.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
