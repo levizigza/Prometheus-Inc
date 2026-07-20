@@ -83,7 +83,8 @@
   function runCreationOpening(done) {
     var page = document.body.getAttribute("data-page") || "home";
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (page !== "home" || reduced || sessionStorage.getItem("promCreationSeen_v20") === "1") {
+    // Always play the home opening — every visit
+    if (page !== "home" || reduced) {
       if (done) done();
       return;
     }
@@ -511,7 +512,6 @@
     function finish() {
       if (finished) return;
       finished = true;
-      sessionStorage.setItem("promCreationSeen_v20", "1");
       if (audio) {
         try {
           audio.pause();

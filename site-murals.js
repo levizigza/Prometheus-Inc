@@ -43,31 +43,31 @@
     },
     philosophy: {
       myth: "Wisdom Written Together",
-      src: "assets/murals/mural-laws.png",
-      pos: "52% 52%",
-      zoom: 1.12,
-      focus: { x: 0.52, y: 0.52 }
+      src: "assets/murals/mural-wisdom.png",
+      pos: "50% 48%",
+      zoom: 1.08,
+      focus: { x: 0.5, y: 0.48 }
     },
     projects: {
       myth: "Hands That Build With Us",
-      src: "assets/murals/mural-forge.png",
-      pos: "55% 42%",
-      zoom: 1.12,
-      focus: { x: 0.55, y: 0.42 }
+      src: "assets/murals/mural-builders.png",
+      pos: "50% 45%",
+      zoom: 1.1,
+      focus: { x: 0.5, y: 0.45 }
     },
     contact: {
       myth: "Call Across the Shared Flame",
-      src: "assets/murals/mural-companions.png",
-      pos: "42% 40%",
-      zoom: 1.1,
-      focus: { x: 0.42, y: 0.4 }
+      src: "assets/murals/mural-signal.png",
+      pos: "50% 46%",
+      zoom: 1.08,
+      focus: { x: 0.5, y: 0.46 }
     },
     insights: {
       myth: "Memory of Cities to Come",
-      src: "assets/murals/mural-city.png",
-      pos: "58% 35%",
-      zoom: 1.15,
-      focus: { x: 0.58, y: 0.35 }
+      src: "assets/murals/mural-memory.png",
+      pos: "50% 42%",
+      zoom: 1.1,
+      focus: { x: 0.5, y: 0.42 }
     }
   };
 
