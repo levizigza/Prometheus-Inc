@@ -402,16 +402,30 @@ main, .footer {
   user-select: none;
   filter: saturate(1.28) contrast(1.1) brightness(1.04);
 }
-/* Final spark mural only — entire artwork visible, no crop */
+/* Contain scenes: full mural visible, sides filled by expanded backdrop */
 .creation-slide--contain {
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 50%, #1a1430 0%, #080612 70%, #04040a 100%);
+  background: #0a101c;
+}
+.creation-slide-fill {
+  position: absolute;
+  inset: -4%;
+  width: 108%;
+  height: 108%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  filter: saturate(1.35) contrast(1.08) brightness(0.72) blur(18px);
+  transform: scale(1.08);
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 0;
 }
 .creation-slide--contain .creation-slide-img {
   object-fit: contain;
   object-position: 50% 50%;
   transform-origin: 50% 50%;
   filter: saturate(1.28) contrast(1.1) brightness(1.04);
+  z-index: 1;
 }
 .creation-opening.is-menu .creation-slides::before {
   opacity: 0.35;

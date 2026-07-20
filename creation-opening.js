@@ -11,6 +11,7 @@
       hold: 10000,
       ken: { from: 1.0, to: 1.0 },
       focus: { x: 0.5, y: 0.5 },
+      fit: "contain",
       hologram: true,
       title: { warm: 0.8, glow: 1.15 }
     },
@@ -189,6 +190,18 @@
         "creation-slide" +
         (scene.fit === "contain" ? " creation-slide--contain" : "") +
         (i === 0 ? " is-active" : "");
+
+      // Side-fill backdrop: same mural expanded to cover gaps, sharp art stays fully visible
+      if (scene.fit === "contain") {
+        var fill = document.createElement("img");
+        fill.className = "creation-slide-fill";
+        fill.alt = "";
+        fill.src = scene.src;
+        fill.decoding = "async";
+        fill.setAttribute("aria-hidden", "true");
+        slide.appendChild(fill);
+      }
+
       var img = document.createElement("img");
       img.className = "creation-slide-img";
       img.alt = "";
