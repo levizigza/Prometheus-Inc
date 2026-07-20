@@ -234,6 +234,30 @@ body::before {
   position: fixed !important;
   z-index: 10020 !important;
   overflow: visible !important;
+  background: linear-gradient(180deg, rgba(4, 6, 12, 0.88) 0%, rgba(4, 6, 12, 0.55) 70%, transparent 100%) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.header.scrolled {
+  background: rgba(5, 10, 18, 0.9) !important;
+}
+.nav-link {
+  display: inline-flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.92 !important;
+  padding: 0.45rem 0.3rem;
+  white-space: nowrap;
+  visibility: visible !important;
+  color: #f4efe6 !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85);
+  overflow: visible !important;
+}
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1 !important;
+  color: #fff !important;
 }
 .nav,
 .nav-menu {

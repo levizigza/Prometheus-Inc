@@ -9,9 +9,9 @@
     home: {
       myth: "Co-creators and the First Fire",
       src: "assets/murals/mural-guardian.png",
-      pos: "50% 42%",
-      zoom: 1.06,
-      focus: { x: 0.55, y: 0.38 }
+      pos: "50% 58%",
+      zoom: 1.04,
+      focus: { x: 0.5, y: 0.58 }
     },
     vision: {
       myth: "Three Pillars of Becoming",
