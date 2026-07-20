@@ -77,6 +77,7 @@
     src: "assets/opening/open-05-spark.png",
     ken: { from: 1.0, to: 1.0 },
     focus: { x: 0.5, y: 0.5 },
+    fit: "contain",
     title: { warm: 0.5, glow: 0.85 }
   };
 
