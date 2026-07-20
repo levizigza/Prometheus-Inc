@@ -486,34 +486,38 @@
     /* colors applied inside navigateWithFire */
   }
 
-  /* ---------- Living logo: purple flame burn on brand mark ---------- */
+  /* ---------- Living logo: flames only (markup + size baked into HTML) ---------- */
   function enhanceLivingLogos() {
     var imgs = document.querySelectorAll(
-      '.nav-logo img, .loader-logo img, img.footer-logo, .footer-brand > img'
+      ".nav-logo img, .loader-logo img, img.footer-logo, .footer-brand img"
     );
     imgs.forEach(function (img) {
-      if (!img || img.closest(".logo-living-wrap")) return;
-      var src = (img.getAttribute("src") || "");
+      if (!img) return;
+      var src = img.getAttribute("src") || "";
       if (src.indexOf("logo") === -1) return;
 
-      var wrap = document.createElement("span");
-      wrap.className = "logo-living-wrap";
-      img.parentNode.insertBefore(wrap, img);
-      wrap.appendChild(img);
+      // Always use the compact UI mark — never the 1024px master asset
+      if (src.indexOf("logo-ui.png") === -1) {
+        img.src = "assets/logo-ui.png?v=32";
+      }
+
+      var wrap = img.closest(".logo-living-wrap");
+      if (!wrap) {
+        wrap = document.createElement("span");
+        wrap.className = "logo-living-wrap";
+        img.parentNode.insertBefore(wrap, img);
+        wrap.appendChild(img);
+      }
       img.classList.add("logo-living-img");
-      img.src = "assets/logo.png?v=23";
 
-      ["", "-mid", "-core"].forEach(function (suffix) {
-        var flame = document.createElement("span");
-        flame.className = "logo-flame" + (suffix ? " logo-flame" + suffix : "");
-        flame.setAttribute("aria-hidden", "true");
-        wrap.appendChild(flame);
-      });
-    });
-
-    // Full wordmark already includes PROMETHEUS
-    document.querySelectorAll(".nav-logo > span:not(.logo-living-wrap)").forEach(function (el) {
-      el.classList.add("logo-word-dup");
+      if (!wrap.querySelector(".logo-flame")) {
+        ["", "-mid", "-core"].forEach(function (suffix) {
+          var flame = document.createElement("span");
+          flame.className = "logo-flame" + (suffix ? " logo-flame" + suffix : "");
+          flame.setAttribute("aria-hidden", "true");
+          wrap.appendChild(flame);
+        });
+      }
     });
   }
 
@@ -534,6 +538,8 @@
     try { enhanceLivingLogos(); } catch (e) { console.warn(e); }
     try { initSiteMurals(); } catch (e) { console.warn(e); }
     try { initAwakenScene(); } catch (e) { console.warn(e); }
+    // Logos are sized — allow header to show when the curtain lifts
+    document.documentElement.classList.add("is-ui-ready");
   }
 
   // Expose for main.js coordination

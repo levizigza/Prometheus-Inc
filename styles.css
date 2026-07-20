@@ -50,6 +50,16 @@ body {
   line-height: 1.65;
 }
 img { max-width: 100%; display: block; }
+/* Brand marks use explicit boxes — never inherit a huge intrinsic PNG size */
+.nav-logo img,
+.nav-logo .logo-living-wrap,
+.loader-logo img,
+.loader-logo .logo-living-wrap,
+.footer-logo,
+.footer-brand .logo-living-wrap,
+img.logo-living-img {
+  max-width: none;
+}
 a { color: inherit; text-decoration: none; }
 button { border: none; background: none; font-family: inherit; cursor: pointer; }
 ::selection { background: var(--flame); color: var(--black); }
@@ -223,7 +233,14 @@ a.keyboard-focus, button.keyboard-focus {
 .nav-logo {
   display: flex; align-items: center; gap: 0.75rem;
 }
-.nav-logo img { width: 64px; height: 64px; object-fit: contain; }
+.nav-logo img,
+.nav-logo .logo-living-wrap {
+  width: 64px !important;
+  height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  object-fit: contain;
+}
 .nav-logo span {
   font-size: 0.95rem; font-weight: 500;
   color: var(--white); letter-spacing: 0.04em;

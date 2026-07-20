@@ -137,26 +137,26 @@ body::before {
 }
 
 /* ===== Living site mural (creation art) ===== */
-.site-mural {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-/* Home: glass nav owns the top; mural + hero start cleanly below it */
-[data-page="home"] {
+:root {
   --header-h: 5.5rem;
 }
-[data-page="home"] .site-mural {
+.site-mural {
+  position: fixed;
+  /* All pages: murals begin below the glass nav — nothing clipped by tabs */
   top: var(--header-h);
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
-[data-page="home"] .site-mural-art-wrap {
-  inset: 0 !important; /* do not bleed under the glass nav */
+.site-mural-art-wrap {
+  position: absolute;
+  inset: 0 !important; /* never bleed under the nav */
+  will-change: transform;
 }
+/* Home: glass nav owns the top; mural + hero start cleanly below it */
 [data-page="home"] .site-mural-art {
   object-position: 50% 22% !important;
 }
@@ -200,11 +200,6 @@ body::before {
 [data-page="home"] .hero-eyebrow,
 [data-page="home"] .hero-sub {
   text-shadow: 0 1px 16px rgba(0, 0, 0, 0.9);
-}
-.site-mural-art-wrap {
-  position: absolute;
-  inset: -8%;
-  will-change: transform;
 }
 .site-mural-art {
   width: 100%;
@@ -1779,51 +1774,84 @@ main, .footer {
 
 /* ================================
    LIVING LOGO — purple flame burn
+   Sizes are locked on the bare <img> AND the wrap so the mark never
+   flashes at intrinsic (huge) size before JS wraps it.
    ================================ */
 .logo-living-wrap {
   position: relative;
   display: inline-block;
   line-height: 0;
   flex-shrink: 0;
+  overflow: visible;
+  box-sizing: border-box;
 }
 .logo-living-img {
   display: block;
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
   position: relative;
   z-index: 1;
 }
+/* Nav mark — fixed box before and after living wrap */
+.nav-logo > img,
 .nav-logo .logo-living-wrap {
-  width: clamp(52px, 7vw, 72px);
-  height: clamp(52px, 7vw, 72px);
+  width: 64px !important;
+  height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  flex-shrink: 0;
+  object-fit: contain;
 }
-.nav-logo img,
+.nav-logo .logo-living-wrap > img,
 .nav-logo .logo-living-img {
   width: 100% !important;
   height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
 }
-.nav-logo > span.logo-word-dup {
+/* Wordmark art already says Prometheus — hide duplicate text always */
+.nav-logo > span:not(.logo-living-wrap) {
   display: none !important;
 }
+/* Footer mark */
+.footer-brand > img.footer-logo,
+.footer-brand > img,
 .footer-brand .logo-living-wrap {
-  width: 48px;
-  height: 48px;
+  width: 48px !important;
+  height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  flex-shrink: 0;
+  object-fit: contain;
 }
-.footer-logo,
+.footer-brand .logo-living-wrap > img,
 .footer-brand .logo-living-img {
   width: 100% !important;
   height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
 }
+/* Loader mark */
+.loader-logo > img,
 .loader-logo .logo-living-wrap {
-  width: 120px;
-  height: 120px;
+  width: 96px !important;
+  height: 96px !important;
+  max-width: 96px !important;
+  max-height: 96px !important;
   margin: 0 auto 1.5rem;
+  object-fit: contain;
 }
-.loader-logo img,
+.loader-logo .logo-living-wrap > img,
 .loader-logo .logo-living-img {
   width: 100% !important;
   height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
   margin: 0 !important;
 }
 /* Purple divine flame — wanders, surges, and flares with life */

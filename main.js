@@ -35,11 +35,14 @@
   var pageTransition = document.getElementById("pageTransition");
 
   function revealPage() {
-    if (pageTransition) {
-      setTimeout(function () {
+    document.documentElement.classList.add("is-ui-ready");
+    if (!pageTransition) return;
+    // Wait two frames so logo layout is committed before the curtain lifts.
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
         pageTransition.classList.add("revealed");
-      }, 100);
-    }
+      });
+    });
   }
 
   function initPageTransitions() {

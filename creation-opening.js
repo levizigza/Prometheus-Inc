@@ -86,8 +86,27 @@
   function runCreationOpening(done) {
     var page = document.body.getAttribute("data-page") || "home";
     var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // Always play the home opening — every visit
-    if (page !== "home" || reduced) {
+    var params = new URLSearchParams(window.location.search || "");
+    var forceIntro = params.get("intro") === "1";
+    var goHomeView = params.get("home") === "1";
+
+    // Home tab → mural page (no opener). Logo (?intro=1) → opener.
+    // Cold first visit this session also plays the opener once.
+    function cleanQuery() {
+      try {
+        if (window.history && window.history.replaceState) {
+          var clean = window.location.pathname + (window.location.hash || "");
+          window.history.replaceState({}, "", clean || "index.html");
+        }
+      } catch (e) {}
+    }
+
+    if (page !== "home" || reduced || goHomeView) {
+      if (goHomeView) cleanQuery();
+      if (done) done();
+      return;
+    }
+    if (!forceIntro && sessionStorage.getItem("promIntroSeen") === "1") {
       if (done) done();
       return;
     }
@@ -527,6 +546,10 @@
     function finish() {
       if (finished) return;
       finished = true;
+      try {
+        sessionStorage.setItem("promIntroSeen", "1");
+      } catch (e) {}
+      cleanQuery();
       if (audio) {
         try {
           audio.pause();
