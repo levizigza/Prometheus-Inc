@@ -5,9 +5,11 @@
 (function () {
   "use strict";
 
+  var ASSET_VER = "v22";
+
   var INTRO = [
     {
-      src: "assets/opening/open-01-hologram-sun.png",
+      src: "assets/opening/open-01-hologram-sun.png?" + ASSET_VER,
       hold: 10000,
       ken: { from: 1.0, to: 1.0 },
       focus: { x: 0.5, y: 0.5 },
@@ -16,56 +18,56 @@
       title: { warm: 0.8, glow: 1.15 }
     },
     {
-      src: "assets/opening/open-06-robot-child.png",
+      src: "assets/opening/open-06-robot-child.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.0, to: 1.02 },
       focus: { x: 0.5, y: 0.28 },
       title: { warm: 0.7, glow: 1.1 }
     },
     {
-      src: "assets/opening/open-02-city.png",
+      src: "assets/opening/open-02-city.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.04, to: 1.0 },
       focus: { x: 0.5, y: 0.5 },
       title: { warm: 0.4, glow: 1.1 }
     },
     {
-      src: "assets/opening/open-07-elderly-groceries.png",
+      src: "assets/opening/open-07-elderly-groceries.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.03, to: 1.0 },
       focus: { x: 0.5, y: 0.5 },
       title: { warm: 0.55, glow: 1.1 }
     },
     {
-      src: "assets/opening/open-03-care.png",
+      src: "assets/opening/open-03-care.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.0, to: 1.04 },
       focus: { x: 0.5, y: 0.48 },
       title: { warm: 0.55, glow: 1.1 }
     },
     {
-      src: "assets/opening/open-08-firefighter.png",
+      src: "assets/opening/open-08-firefighter.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.05, to: 1.0 },
       focus: { x: 0.5, y: 0.46 },
       title: { warm: 0.85, glow: 1.15 }
     },
     {
-      src: "assets/opening/open-09-caregiver.png",
+      src: "assets/opening/open-09-caregiver.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.0, to: 1.04 },
       focus: { x: 0.5, y: 0.5 },
       title: { warm: 0.45, glow: 1.1 }
     },
     {
-      src: "assets/opening/open-04-journey.png",
+      src: "assets/opening/open-04-journey.png?" + ASSET_VER,
       hold: 10000,
       ken: { from: 1.05, to: 1.0 },
       focus: { x: 0.5, y: 0.45 },
       title: { warm: 0.3, glow: 1.15 }
     },
     {
-      src: "assets/opening/open-10-harvest.png",
+      src: "assets/opening/open-10-harvest.png?" + ASSET_VER,
       hold: 9500,
       ken: { from: 1.03, to: 1.0 },
       focus: { x: 0.5, y: 0.5 },
@@ -74,7 +76,7 @@
   ];
 
   var MENU_SCENE = {
-    src: "assets/opening/open-05-spark.png",
+    src: "assets/opening/open-05-spark.png?" + ASSET_VER,
     ken: { from: 1.0, to: 1.0 },
     focus: { x: 0.5, y: 0.5 },
     fit: "contain",
@@ -112,7 +114,7 @@
       "</div>" +
       '<div class="creation-slides" id="creationSlides"></div>' +
       '<div class="creation-title-plate" id="creationTitlePlate" aria-hidden="true">' +
-      '<img class="creation-title-img" src="assets/opening/prometheus-title-glass.png" alt="Prometheus" />' +
+      '<img class="creation-title-img" src="assets/opening/prometheus-title-glass.png?' + ASSET_VER + '" alt="Prometheus" />' +
       "</div>" +
       '<canvas class="creation-canvas" id="creationCanvas"></canvas>' +
       '<div class="creation-gate" id="creationGate">' +
@@ -141,7 +143,7 @@
       "</div>" +
       "</div>" +
       '<audio id="creationAudio" preload="auto" loop playsinline aria-label="Opening music: Bach Air">' +
-      '<source src="assets/audio/bach-air.mp3" type="audio/mpeg" />' +
+      '<source src="assets/audio/bach-air.mp3?' + ASSET_VER + '" type="audio/mpeg" />' +
       "</audio>";
     document.body.appendChild(wrap);
     document.body.style.overflow = "hidden";

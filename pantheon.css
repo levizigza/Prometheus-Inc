@@ -408,24 +408,32 @@ main, .footer {
 }
 .creation-slide-fill {
   position: absolute;
-  inset: -4%;
-  width: 108%;
-  height: 108%;
+  inset: -6%;
+  width: 112%;
+  height: 112%;
   object-fit: cover;
   object-position: 50% 50%;
-  filter: saturate(1.35) contrast(1.08) brightness(0.72) blur(18px);
-  transform: scale(1.08);
+  filter: saturate(1.4) contrast(1.1) brightness(0.78) blur(22px);
+  transform: scale(1.12);
   pointer-events: none;
   -webkit-user-select: none;
   user-select: none;
   z-index: 0;
 }
 .creation-slide--contain .creation-slide-img {
-  object-fit: contain;
-  object-position: 50% 50%;
+  object-fit: contain !important;
+  object-position: 50% 50% !important;
+  transform: scale(1) !important;
   transform-origin: 50% 50%;
   filter: saturate(1.28) contrast(1.1) brightness(1.04);
   z-index: 1;
+}
+/* Final spark menu: keep whole PROMETHEUS plate readable */
+.creation-opening.is-menu .creation-slide--contain .creation-slide-img {
+  object-fit: contain !important;
+  object-position: 50% 48% !important;
+  max-height: 100%;
+  max-width: 100%;
 }
 .creation-opening.is-menu .creation-slides::before {
   opacity: 0.35;
