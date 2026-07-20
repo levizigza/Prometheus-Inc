@@ -144,6 +144,40 @@ body::before {
   pointer-events: none;
   overflow: hidden;
 }
+/* Home: start mural below the nav so faces + torch aren't clipped */
+[data-page="home"] .site-mural {
+  top: 4.75rem;
+}
+[data-page="home"] .site-mural-art {
+  object-position: 50% 28% !important;
+}
+[data-page="home"] .site-mural-caption {
+  bottom: 1.25rem;
+}
+/* Keep homepage hero title always readable after the opener */
+[data-page="home"] .hero-content {
+  z-index: 3;
+}
+[data-page="home"] .hero-eyebrow,
+[data-page="home"] .hero-sub,
+[data-page="home"] .hero-actions,
+[data-page="home"].is-entered .hero-eyebrow,
+[data-page="home"].is-entered .hero-sub,
+[data-page="home"].is-entered .hero-actions {
+  opacity: 1;
+}
+[data-page="home"].is-entered .line-inner {
+  transform: translateY(0);
+}
+[data-page="home"] .hero-title {
+  text-shadow:
+    0 2px 24px rgba(0, 0, 0, 0.85),
+    0 0 40px rgba(0, 0, 0, 0.45);
+}
+[data-page="home"] .hero-eyebrow,
+[data-page="home"] .hero-sub {
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.9);
+}
 .site-mural-art-wrap {
   position: absolute;
   inset: -8%;

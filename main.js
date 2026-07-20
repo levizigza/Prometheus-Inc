@@ -870,10 +870,17 @@
 
     // --- Hero intro (home only) ---
     if (currentPage === "home") {
+      document.body.classList.add("is-entered");
+      // Ensure title lines are visible even if a prior transform stuck
+      document.querySelectorAll(".line-inner").forEach(function (el) {
+        gsap.set(el, { y: 0, clearProps: false });
+      });
+      gsap.set([".hero-eyebrow", ".hero-sub", ".hero-actions", ".hero-scroll"], { opacity: 1, y: 0 });
+
       var tl = gsap.timeline();
       tl.from(".hero-eyebrow", { y: 20, opacity: 0, duration: 0.7, ease: "power3.out" }, 0);
       document.querySelectorAll(".line-inner").forEach(function (el, i) {
-        tl.to(el, { y: 0, duration: 1.1, ease: "power4.out" }, 0.15 + i * 0.1);
+        tl.fromTo(el, { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, ease: "power4.out" }, 0.15 + i * 0.1);
       });
       tl.from(".hero-sub", { y: 20, opacity: 0, duration: 0.7, ease: "power3.out" }, 0.7);
       tl.from(".hero-actions", { y: 20, opacity: 0, duration: 0.7, ease: "power3.out" }, 0.85);
