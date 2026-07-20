@@ -1734,14 +1734,13 @@ main, .footer {
   height: 100% !important;
   margin: 0 !important;
 }
-/* Purple divine flame — sits on the spark between fingers */
+/* Purple divine flame — wanders, surges, and flares with life */
 .logo-flame {
   position: absolute;
   left: 50%;
   top: 38%;
   width: 10%;
   height: 28%;
-  transform: translate(-50%, -50%);
   z-index: 2;
   pointer-events: none;
   border-radius: 50% 50% 45% 45% / 60% 60% 40% 40%;
@@ -1753,17 +1752,18 @@ main, .footer {
     0 0 14px rgba(155, 77, 255, 0.75),
     0 0 28px rgba(120, 60, 255, 0.45);
   mix-blend-mode: screen;
-  animation: logoFlameLick 0.55s ease-in-out infinite alternate;
+  transform: translate(-50%, -50%);
   transform-origin: 50% 90%;
+  animation: logoFlameLife 2.6s ease-in-out infinite;
 }
 .logo-flame-mid {
   width: 6%;
   height: 18%;
   top: 39%;
   background: linear-gradient(180deg, #fff6ff 0%, #f0a8ff 50%, #c060ff 100%);
-  opacity: 0.9;
-  animation: logoFlameLick 0.4s ease-in-out infinite alternate-reverse;
-  animation-delay: -0.1s;
+  opacity: 0.95;
+  animation: logoFlameLifeMid 2.1s ease-in-out infinite;
+  animation-delay: -0.4s;
 }
 .logo-flame-core {
   width: 3.5%;
@@ -1771,20 +1771,124 @@ main, .footer {
   top: 40%;
   background: radial-gradient(ellipse at 50% 70%, #ffffff 0%, #ffe0ff 60%, transparent 100%);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
-  animation: logoFlameCore 0.28s ease-in-out infinite alternate;
+  animation: logoFlameLifeCore 1.6s ease-in-out infinite;
+  animation-delay: -0.7s;
 }
-@keyframes logoFlameLick {
-  0% { transform: translate(-50%, -50%) scaleX(1) scaleY(1) rotate(-3deg); filter: brightness(0.95); }
-  100% { transform: translate(-50%, -48%) scaleX(1.15) scaleY(1.12) rotate(4deg); filter: brightness(1.2); }
+.logo-living-wrap::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 24%;
+  height: 36%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 60%,
+    rgba(224, 112, 255, 0.55) 0%,
+    rgba(120, 60, 255, 0.2) 48%,
+    transparent 72%);
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: logoFlameAura 2.4s ease-in-out infinite;
 }
-@keyframes logoFlameCore {
-  0% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.9); }
-  100% { opacity: 1; transform: translate(-50%, -52%) scale(1.15); }
+@keyframes logoFlameLife {
+  0% {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(0.92, 0.95);
+    filter: brightness(0.9);
+    opacity: 0.85;
+  }
+  18% {
+    transform: translate(calc(-50% + 1.5px), calc(-50% - 2.5px)) rotate(4deg) scale(1.05, 1.12);
+    filter: brightness(1.15);
+    opacity: 1;
+  }
+  40% {
+    transform: translate(calc(-50% - 1.8px), calc(-50% + 1px)) rotate(-7deg) scale(0.96, 1.02);
+    filter: brightness(1);
+    opacity: 0.9;
+  }
+  62% {
+    transform: translate(calc(-50% + 1px), calc(-50% - 3.5px)) rotate(6deg) scale(1.28, 1.42);
+    filter: brightness(1.5);
+    opacity: 1;
+    box-shadow:
+      0 0 10px rgba(255, 180, 255, 1),
+      0 0 22px rgba(224, 112, 255, 0.95),
+      0 0 40px rgba(120, 60, 255, 0.65);
+  }
+  82% {
+    transform: translate(calc(-50% - 0.8px), calc(-50% - 1px)) rotate(-2deg) scale(1.08, 1.15);
+    filter: brightness(1.2);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(0.92, 0.95);
+    filter: brightness(0.9);
+    opacity: 0.85;
+  }
+}
+@keyframes logoFlameLifeMid {
+  0% {
+    transform: translate(-50%, -50%) rotate(4deg) scale(0.9, 0.92);
+    opacity: 0.75;
+  }
+  30% {
+    transform: translate(calc(-50% - 1.6px), calc(-50% - 2px)) rotate(-6deg) scale(1.1, 1.2);
+    opacity: 1;
+  }
+  55% {
+    transform: translate(calc(-50% + 1.8px), calc(-50% + 0.5px)) rotate(5deg) scale(1.35, 1.5);
+    opacity: 1;
+    filter: brightness(1.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(4deg) scale(0.9, 0.92);
+    opacity: 0.75;
+  }
+}
+@keyframes logoFlameLifeCore {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.65;
+  }
+  25% {
+    transform: translate(calc(-50% + 0.9px), calc(-50% - 1.8px)) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(calc(-50% - 1.1px), calc(-50% + 0.8px)) scale(1.55);
+    opacity: 1;
+    filter: brightness(1.7);
+  }
+  75% {
+    transform: translate(calc(-50% + 0.5px), calc(-50% - 2.2px)) scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.65;
+  }
+}
+@keyframes logoFlameAura {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  45% {
+    opacity: 0.55;
+    transform: translate(-50%, -52%) scale(1.05);
+  }
+  68% {
+    opacity: 1;
+    transform: translate(-50%, -54%) scale(1.45);
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .logo-flame,
   .logo-flame-mid,
-  .logo-flame-core {
+  .logo-flame-core,
+  .logo-living-wrap::after {
     animation: none !important;
   }
 }
