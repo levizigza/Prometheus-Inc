@@ -799,9 +799,9 @@ main, .footer {
 .creation-opening.is-gate .creation-canvas {
   opacity: 0;
 }
-.creation-opening.is-play .creation-gate,
-.creation-opening.is-menu .creation-gate {
-  display: none !important;
+/* On the gate screen, bias first mural toward the crowd so faces aren't cropped */
+.creation-opening.is-gate .creation-slide.is-active .creation-slide-img {
+  object-position: 50% 68% !important;
 }
 
 .creation-caption {
