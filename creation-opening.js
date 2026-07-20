@@ -9,8 +9,9 @@
     {
       src: "assets/opening/open-01-hologram-sun.png",
       hold: 10000,
-      ken: { from: 1.0, to: 1.02 },
-      focus: { x: 0.5, y: 0.62 },
+      ken: { from: 1.0, to: 1.0 },
+      focus: { x: 0.5, y: 0.5 },
+      fit: "contain",
       hologram: true,
       title: { warm: 0.8, glow: 1.15 }
     },
