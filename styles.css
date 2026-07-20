@@ -180,7 +180,7 @@ a.keyboard-focus, button.keyboard-focus {
 .loader.done { pointer-events: none; }
 .loader-inner { text-align: center; }
 .loader-logo img {
-  width: 48px; height: 48px;
+  width: 120px; height: 120px;
   margin: 0 auto 2rem; object-fit: contain;
 }
 .loader-counter {
@@ -223,7 +223,7 @@ a.keyboard-focus, button.keyboard-focus {
 .nav-logo {
   display: flex; align-items: center; gap: 0.75rem;
 }
-.nav-logo img { width: 30px; height: 30px; object-fit: contain; }
+.nav-logo img { width: 64px; height: 64px; object-fit: contain; }
 .nav-logo span {
   font-size: 0.95rem; font-weight: 500;
   color: var(--white); letter-spacing: 0.04em;
@@ -1808,7 +1808,7 @@ a.keyboard-focus, button.keyboard-focus {
   margin-bottom: 3rem; gap: 3rem;
 }
 .footer-brand { display: flex; align-items: center; gap: 0.75rem; }
-.footer-logo { width: 26px; height: 26px; object-fit: contain; }
+.footer-logo { width: 48px; height: 48px; object-fit: contain; }
 .footer-name { font-weight: 500; color: var(--white); font-size: 0.92rem; }
 .footer-nav { display: flex; gap: 4rem; }
 .footer-col { display: flex; flex-direction: column; gap: 0.5rem; }

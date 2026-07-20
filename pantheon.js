@@ -486,6 +486,37 @@
     /* colors applied inside navigateWithFire */
   }
 
+  /* ---------- Living logo: purple flame burn on brand mark ---------- */
+  function enhanceLivingLogos() {
+    var imgs = document.querySelectorAll(
+      '.nav-logo img, .loader-logo img, img.footer-logo, .footer-brand > img'
+    );
+    imgs.forEach(function (img) {
+      if (!img || img.closest(".logo-living-wrap")) return;
+      var src = (img.getAttribute("src") || "");
+      if (src.indexOf("logo") === -1) return;
+
+      var wrap = document.createElement("span");
+      wrap.className = "logo-living-wrap";
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+      img.classList.add("logo-living-img");
+      img.src = "assets/logo.png?v=23";
+
+      ["", "-mid", "-core"].forEach(function (suffix) {
+        var flame = document.createElement("span");
+        flame.className = "logo-flame" + (suffix ? " logo-flame" + suffix : "");
+        flame.setAttribute("aria-hidden", "true");
+        wrap.appendChild(flame);
+      });
+    });
+
+    // Full wordmark already includes PROMETHEUS
+    document.querySelectorAll(".nav-logo > span:not(.logo-living-wrap)").forEach(function (el) {
+      el.classList.add("logo-word-dup");
+    });
+  }
+
   /* ---------- Awaken interactive (8-bit Zelda forge) ---------- */
   function initAwakenScene() {
     if (window.PrometheusAwaken && typeof window.PrometheusAwaken.init === "function") {
@@ -500,6 +531,7 @@
     try { enhancePageTransition(); } catch (e) { console.warn(e); }
     try { enhanceNavTorches(); } catch (e) { console.warn(e); }
     try { enhanceHeroTitles(); } catch (e) { console.warn(e); }
+    try { enhanceLivingLogos(); } catch (e) { console.warn(e); }
     try { initSiteMurals(); } catch (e) { console.warn(e); }
     try { initAwakenScene(); } catch (e) { console.warn(e); }
   }
