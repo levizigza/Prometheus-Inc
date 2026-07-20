@@ -34,8 +34,9 @@
   <link rel="manifest" href="site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pantheon.css" />
 </head>
 <body data-page="home">
 
@@ -43,7 +44,7 @@
   <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
   <!-- Page Transition Overlay -->
-  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div></div>
+  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div><div class="page-transition-flames" aria-hidden="true"></div></div>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor">
@@ -90,14 +91,14 @@
       <canvas class="hero-canvas" id="heroCanvas"></canvas>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="hero-eyebrow">Robotics &middot; Architecture &middot; Humanity</p>
+        <p class="hero-eyebrow">Modern Myth &middot; Living Machines &middot; Golden Age</p>
         <h1 class="hero-title">
-          <span class="line-wrap"><span class="line-inner">Where machines</span></span>
-          <span class="line-wrap"><span class="line-inner">learn to <em>feel</em></span></span>
-          <span class="line-wrap"><span class="line-inner">&amp; cities learn</span></span>
-          <span class="line-wrap"><span class="line-inner">to <em>breathe.</em></span></span>
+          <span class="line-wrap"><span class="line-inner">Where ancient fire</span></span>
+          <span class="line-wrap"><span class="line-inner">meets <em>future light</em></span></span>
+          <span class="line-wrap"><span class="line-inner">&amp; co-creators</span></span>
+          <span class="line-wrap"><span class="line-inner">lift the <em>human story.</em></span></span>
         </h1>
-        <p class="hero-sub">Sentient robotics and solar punk cities for a regenerative future &mdash; a civilization as beautiful as it is alive.</p>
+        <p class="hero-sub">Prometheus is a vehicle for modern myth — robotics and solar punk cities forged where spirituality, craft, and technology kindle a Satya Yuga of regenerative genius.</p>
         <div class="hero-actions">
           <a href="vision.html" class="btn btn--primary magnetic" data-strength="8">
             <span class="btn-text">Explore our vision</span>
@@ -144,7 +145,7 @@
             <div class="preview-card-glow"></div>
             <div class="preview-card-num">01</div>
             <h3>Sentient Machines</h3>
-            <p>Machines with personality, empathy, and the capacity to learn, grow, and experience life &mdash; inspired by the souls of Sonny, Atom, and the Iron Giant.</p>
+            <p>Machines with personality, empathy, and the capacity to learn, grow, and co-create &mdash; the Campbellian helpers of our age, pushing the human story forward.</p>
             <div class="preview-card-arrow">
               <span>Discover</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
@@ -276,7 +277,7 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Prometheus. All rights reserved. • <a href="privacy.html">Privacy Policy</a></p>
-        <p class="footer-tagline">Robotics, architecture, and humanity in harmony.</p>
+        <p class="footer-tagline">A vehicle for modern myth — robotics, architecture, and humanity in harmony.</p>
       </div>
     </div>
   </footer>
@@ -284,6 +285,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="creation-opening.js"></script>
+  <script src="site-murals.js"></script>
+  <script src="pantheon.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

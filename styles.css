@@ -6,30 +6,30 @@
    ============================================ */
 
 :root {
-  --black: #0b0b0f;
-  --bg: #0e0e12;
-  --bg-alt: #111116;
-  --surface: #16161c;
-  --surface-2: #1c1c24;
-  --border: rgba(255,255,255,0.06);
-  --border-hover: rgba(255,255,255,0.14);
+  --black: #050508;
+  --bg: #08070c;
+  --bg-alt: #0d0c12;
+  --surface: #14131a;
+  --surface-2: #1c1a24;
+  --border: rgba(255, 230, 190, 0.07);
+  --border-hover: rgba(255, 230, 190, 0.16);
 
-  --flame: #e8a735;
-  --flame-light: #f5c961;
-  --ember: #c4722a;
-  --sun: #fad68a;
+  --flame: #ff8a2a;
+  --flame-light: #ffc56b;
+  --ember: #e04a18;
+  --sun: #ffe09a;
   --leaf: #6dbf6a;
   --leaf-muted: rgba(109,191,106,0.1);
-  --sky: #5b9bd5;
-  --sky-muted: rgba(91,155,213,0.1);
+  --sky: #4aa3ff;
+  --sky-muted: rgba(74,163,255,0.1);
 
-  --white: #f0ede8;
-  --text: #b8b3ab;
-  --text-muted: #757069;
-  --text-dim: #45413c;
+  --white: #f4efe6;
+  --text: #b9b0a3;
+  --text-muted: #7a7268;
+  --text-dim: #4a453e;
 
-  --font: "Inter", -apple-system, system-ui, sans-serif;
-  --font-display: "Playfair Display", Georgia, serif;
+  --font: "Manrope", "Segoe UI", sans-serif;
+  --font-display: "Cinzel", "Times New Roman", serif;
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);

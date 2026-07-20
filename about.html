@@ -28,8 +28,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pantheon.css" />
 </head>
 <body data-page="about">
 
@@ -37,7 +38,7 @@
   <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
   <!-- Page Transition Overlay -->
-  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div></div>
+  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div><div class="page-transition-flames" aria-hidden="true"></div></div>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor">
@@ -72,8 +73,8 @@
       <div class="page-hero-bg"></div>
       <div class="container">
         <span class="page-hero-label">Our Origin</span>
-        <h1 class="page-hero-title">The eternal <em>ascent.</em></h1>
-        <p class="page-hero-desc">In Greek mythology, Prometheus defied the gods to bring fire — knowledge, technology, the spark of progress — to humanity. We carry that same spirit.</p>
+        <h1 class="page-hero-title">The gift of <em>fire.</em></h1>
+        <p class="page-hero-desc">In Greek mythology, Prometheus defied the gods to bring fire — knowledge, craft, and the spark of civilization — to humanity. We carry that same creative spirit.</p>
       </div>
     </section>
 
@@ -83,99 +84,15 @@
         <div class="about-layout">
 
           <div class="about-text">
-            <h2 data-animate="fade-up">The myth that<br/>drives us.</h2>
+            <h2 data-animate="fade-up">The myth that<br/>kindles us.</h2>
             <p data-animate="fade-up">Prometheus was a Titan who saw humanity shivering in darkness, powerless before the gods and the wild. He dared to climb Mount Olympus and steal fire — not for himself, but for them. That fire was more than flame: it was knowledge, craft, technology, the very spark of civilization.</p>
-            <p data-animate="fade-up">For this act of defiance, Zeus condemned Prometheus to eternal punishment — chained to a rock, his liver devoured each day, only to regenerate and suffer again. Yet Prometheus never regretted his gift. The sacrifice was the point. Progress demands courage, and courage demands sacrifice.</p>
-            <p data-animate="fade-up">We carry that myth forward. Like Prometheus pushing the boulder upward against gravity, against convention, against the easy path — we believe the most meaningful work is the hardest. Every sentient machine we envision, every living city we design, every regenerative system we build is another step up the mountain.</p>
+            <p data-animate="fade-up">For this act of defiance, Zeus condemned him — yet Prometheus never regretted his gift. The sacrifice was the point. Creation demands courage, and courage is the first craft.</p>
+            <p data-animate="fade-up">We carry that myth forward as a modern sacred task. Not endless struggle against a stone, but the kindling of helpers — placing fire into machines so they awaken as allies, the way Campbell wrote of supernatural aid arriving when the journey demands it. Every sentient machine, every living city, every regenerative system is a vessel for that shared destiny: humanity becoming greater because it does not walk alone.</p>
           </div>
 
-          <div class="about-animation" data-animate="fade-up">
-            <div class="prometheus-scene" id="prometheusScene" role="img" aria-label="Interactive: drag upward to help Prometheus climb the mountain">
-
-              <svg id="promSvg" class="prometheus-svg" viewBox="0 0 400 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="mountainGrad" x1="200" y1="60" x2="200" y2="500" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#e8a735"/>
-                    <stop offset="100%" stop-color="#0b0b0f" stop-opacity="0"/>
-                  </linearGradient>
-                  <radialGradient id="boulderGrad" cx="0.35" cy="0.3" r="0.6">
-                    <stop offset="0%" stop-color="#8a8078"/>
-                    <stop offset="50%" stop-color="#5c554e"/>
-                    <stop offset="100%" stop-color="#3a352f"/>
-                  </radialGradient>
-                  <radialGradient id="boulderGlow" cx="0.5" cy="0.5" r="0.5">
-                    <stop offset="0%" stop-color="#e8a735" stop-opacity="0.5"/>
-                    <stop offset="100%" stop-color="#e8a735" stop-opacity="0"/>
-                  </radialGradient>
-                  <filter id="sparkGlow">
-                    <feGaussianBlur stdDeviation="2" result="g"/>
-                    <feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
-                </defs>
-
-                <!-- Mountain body -->
-                <path d="M0 500 L200 60 L400 500 Z" fill="url(#mountainGrad)" opacity="0.1"/>
-
-                <!-- Climbing path (left slope) — visual reference -->
-                <line x1="80" y1="455" x2="200" y2="75" stroke="rgba(232,167,53,0.08)" stroke-width="1" stroke-dasharray="4 8"/>
-
-                <!-- Step markers along the climb path -->
-                <line x1="95" y1="430" x2="110" y2="426" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="112" y1="390" x2="127" y2="386" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="128" y1="350" x2="143" y2="346" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="143" y1="310" x2="158" y2="306" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="155" y1="270" x2="170" y2="266" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="166" y1="230" x2="181" y2="226" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="175" y1="190" x2="190" y2="186" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-                <line x1="183" y1="150" x2="198" y2="146" stroke="rgba(232,167,53,0.06)" stroke-width="1"/>
-
-                <!-- Summit glow -->
-                <circle cx="200" cy="60" r="8" fill="#e8a735" opacity="0.12"/>
-                <circle cx="200" cy="60" r="3" fill="#e8a735" opacity="0.4"/>
-                <text x="200" y="45" text-anchor="middle" fill="#e8a735" font-size="8" font-family="Inter, sans-serif" letter-spacing="0.15em" opacity="0.4">SUMMIT</text>
-
-                <!-- Prometheus figure -->
-                <g id="promFigure">
-                  <circle id="promHead" cx="0" cy="-48" r="8" fill="none" stroke="#f0ede8" stroke-width="1.5"/>
-                  <line id="promTorso" x1="0" y1="-40" x2="0" y2="-14" stroke="#f0ede8" stroke-width="1.8" stroke-linecap="round"/>
-                  <line id="promArmFront" x1="0" y1="-34" x2="18" y2="-28" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round"/>
-                  <line id="promArmBack" x1="0" y1="-34" x2="-10" y2="-22" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                  <line id="promLegFront" x1="0" y1="-14" x2="12" y2="4" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round"/>
-                  <line id="promLegBack" x1="0" y1="-14" x2="-8" y2="2" stroke="#f0ede8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-                </g>
-
-                <!-- Boulder -->
-                <g id="promBoulder">
-                  <circle cx="0" cy="0" r="20" fill="url(#boulderGrad)" stroke="rgba(232,167,53,0.2)" stroke-width="0.5"/>
-                  <circle cx="-5" cy="-4" r="5" fill="rgba(255,255,255,0.04)"/>
-                  <circle cx="6" cy="5" r="3" fill="rgba(0,0,0,0.12)"/>
-                  <circle cx="0" cy="0" r="28" fill="url(#boulderGlow)" opacity="0"/>
-                </g>
-
-                <!-- Fire sparks (animated by JS) -->
-                <g id="promSparks" filter="url(#sparkGlow)">
-                  <circle class="spark spark-1" r="2" fill="#e8a735" opacity="0"/>
-                  <circle class="spark spark-2" r="1.5" fill="#f5c961" opacity="0"/>
-                  <circle class="spark spark-3" r="2.5" fill="#c4722a" opacity="0"/>
-                  <circle class="spark spark-4" r="1.8" fill="#fad68a" opacity="0"/>
-                  <circle class="spark spark-5" r="1.2" fill="#e8a735" opacity="0"/>
-                  <circle class="spark spark-6" r="2" fill="#f5c961" opacity="0"/>
-                </g>
-              </svg>
-
-              <!-- Progress bar (HTML, below SVG) -->
-              <div class="prom-progress">
-                <div class="prom-progress-fill" id="promProgressBar"></div>
-                <div class="prom-progress-label" id="promProgressLabel">0%</div>
-              </div>
-
-              <!-- Hint -->
-              <div class="prom-hint" id="promHint">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-                <span>Click &amp; drag to climb</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-              </div>
-            </div>
+          <div class="about-animation">
+            <div class="zelda-scene" id="prometheusScene" role="application" aria-label="Interactive 8-bit scene: drag the flaming gauntlet into the stove to awaken the robot"></div>
+            <p class="zelda-caption">An interactive myth — drag the flaming gauntlet into the forge.</p>
           </div>
 
         </div>
@@ -231,7 +148,7 @@
       <div class="container">
         <div class="section-header section-header--center">
           <span class="section-label" data-animate="fade-up">Our Values</span>
-          <h2 class="section-title" data-animate="fade-up">Principles that<br/>guide the climb.</h2>
+          <h2 class="section-title" data-animate="fade-up">Principles that<br/>guide the forge.</h2>
         </div>
         <div class="principles-grid">
           <div class="principle-card tilt-card" data-animate="fade-up" data-delay="0.0">
@@ -288,7 +205,7 @@
 
         <!-- Join the Team CTA -->
         <div class="team-cta" data-animate="fade-up">
-          <h3>Join the Climb</h3>
+          <h3>Join the Forge</h3>
           <p>We're seeking exceptional individuals who share our vision: engineers, designers, architects, philosophers, and dreamers who believe technology can elevate humanity rather than replace it.</p>
           <a href="contact.html" class="btn btn--outline magnetic" data-strength="10">Explore Opportunities</a>
         </div>
@@ -350,6 +267,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="creation-opening.js"></script>
+  <script src="site-murals.js"></script>
+  <script src="awaken-8bit.js"></script>
+  <script src="pantheon.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

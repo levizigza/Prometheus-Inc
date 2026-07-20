@@ -28,8 +28,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pantheon.css" />
 </head>
 <body data-page="philosophy">
 
@@ -40,7 +41,7 @@
   <div class="progress-bar" id="progressBar"></div>
 
   <!-- Page Transition -->
-  <div class="page-transition" id="pageTransition"></div>
+  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div><div class="page-transition-flames" aria-hidden="true"></div></div>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
@@ -71,11 +72,19 @@
     <!-- Page Hero -->
     <section class="page-hero page-hero--center">
       <div class="page-hero-bg"></div>
-      <canvas class="page-hero-canvas" id="pageCanvas"></canvas>
       <div class="container">
         <span class="page-hero-label">05 — Philosophy</span>
         <h1 class="page-hero-title">The <em>Prometheus</em> Manifesto</h1>
         <p class="page-hero-desc">A declaration of purpose — our philosophical foundation for building a regenerative future where humanity and technology evolve as one.</p>
+      </div>
+    </section>
+
+    <section class="scene-stage section" aria-label="Interactive flame of philosophy">
+      <div class="container">
+        <div class="scene-stage-frame">
+          <canvas class="scene-stage-canvas" id="pageCanvas"></canvas>
+        </div>
+        <p class="scene-stage-caption">The inventive flame — philosophy as living light, not doctrine.</p>
       </div>
     </section>
 
@@ -85,7 +94,7 @@
         <p class="manifesto-text" data-animate="fade-up">We believe that the greatest act of creation is not to build what has been, but to <em>imagine</em> what could be. Prometheus stole fire not because it was easy, but because humanity deserved to see in the dark.</p>
         <p class="manifesto-text" data-animate="fade-up">We build machines not to replace the human spirit, but to <em>amplify</em> it — companions with empathy, creativity, and the capacity for wonder. Machines that dream alongside us.</p>
         <p class="manifesto-text" data-animate="fade-up">We design cities not as monuments to efficiency, but as living, breathing <em>ecosystems</em> — where technology serves nature, where walls become gardens, and where every system regenerates more than it consumes.</p>
-        <p class="manifesto-text" data-animate="fade-up">This is not a business plan. This is a <em>covenant</em> with the future. Like our namesake, we carry fire — knowing the climb is eternal, knowing the boulder will roll back, and choosing to push forward anyway.</p>
+        <p class="manifesto-text" data-animate="fade-up">This is not a business plan. This is a <em>covenant</em> with the future — a Satya Yuga tone of truth, craft, and luminous becoming. Like our namesake, we carry fire so that ancient wisdom and futuristic power may raise humanity together.</p>
       </div>
     </section>
 
@@ -156,7 +165,7 @@
               </svg>
             </div>
             <h3>Courage Over Comfort</h3>
-            <p>The mythic act of bringing fire requires defying convention and embracing the eternal climb.</p>
+            <p>The mythic act of bringing fire requires courage, craft, and a willingness to remake what the world believes is impossible.</p>
           </div>
 
           <!-- Principle 6: Unity Over Division -->
@@ -183,7 +192,7 @@
     <section class="section">
       <div class="container container--narrow">
         <blockquote class="quote" data-animate="split-words">
-          "The boulder never reaches the top. And that is precisely the point. The climb itself — the relentless, beautiful act of creation — is the mission."
+          "Fire once given cannot be ungiven. We are building a vehicle for modern myth — awakening co-creators so the human story can cross into its golden age."
         </blockquote>
       </div>
     </section>
@@ -230,6 +239,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="creation-opening.js"></script>
+  <script src="site-murals.js"></script>
+  <script src="pantheon.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

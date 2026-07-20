@@ -11,6 +11,17 @@
   var isMobile = !isDesktop || window.innerWidth < 769;
   var currentPage = document.body.getAttribute("data-page") || "home";
 
+  function canvasSize(canvas) {
+    var parent = canvas.parentElement;
+    var w = canvas.clientWidth || canvas.offsetWidth || 0;
+    var h = canvas.clientHeight || canvas.offsetHeight || 0;
+    if (parent) {
+      if (w < 2) w = parent.clientWidth;
+      if (h < 2) h = parent.clientHeight;
+    }
+    return { w: Math.max(2, w || 800), h: Math.max(2, h || 500) };
+  }
+
   document.addEventListener("mousemove", function (e) {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
@@ -32,22 +43,25 @@
   }
 
   function initPageTransitions() {
-    // Intercept internal links for smooth transitions
+    // Intercept internal links for torch-fire transitions
     document.querySelectorAll('a[href]').forEach(function (a) {
       var href = a.getAttribute("href");
-      // Only intercept local page links (not anchors, not external)
       if (!href) return;
       if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http") || href.startsWith("tel:")) return;
 
       a.addEventListener("click", function (e) {
         e.preventDefault();
         var target = a.href;
+        if (window.PrometheusPantheon && typeof window.PrometheusPantheon.navigateWithFire === "function") {
+          window.PrometheusPantheon.navigateWithFire(target, a);
+          return;
+        }
         if (pageTransition) {
           pageTransition.classList.remove("revealed");
           pageTransition.classList.add("leaving");
           setTimeout(function () {
             window.location = target;
-          }, 500);
+          }, 900);
         } else {
           window.location = target;
         }
@@ -64,6 +78,16 @@
   var loadProgress = { value: 0 };
 
   function runLoader(callback) {
+    // Home uses the divine-flame creation opener instead of the numeric loader
+    if (currentPage === "home" && window.PrometheusPantheon && typeof window.PrometheusPantheon.runCreationOpening === "function") {
+      if (loader) {
+        loader.classList.add("done");
+        loader.style.display = "none";
+      }
+      revealPage();
+      window.PrometheusPantheon.runCreationOpening(callback);
+      return;
+    }
     if (!loader || typeof gsap === "undefined") {
       if (callback) callback();
       revealPage();
@@ -245,18 +269,20 @@
     var canvas = document.getElementById("pageCanvas");
     if (!canvas || typeof THREE === "undefined") return;
 
-    var w = canvas.offsetWidth, h = canvas.offsetHeight;
+    var sz = canvasSize(canvas);
+    var w = sz.w, h = sz.h;
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 100);
     camera.position.set(0, 0.8, 5.5);
 
     var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
     renderer.setSize(w, h);
+    renderer.setClearColor(0x05070e, 1);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
 
-    var wireMat = new THREE.MeshBasicMaterial({ color: 0xf0ede8, wireframe: true, transparent: true, opacity: 0.2 });
-    var glowMat = new THREE.MeshBasicMaterial({ color: 0xe8a735, transparent: true, opacity: 0.7 });
-    var coreMat = new THREE.MeshBasicMaterial({ color: 0xe8a735, transparent: true, opacity: 0.15 });
+    var wireMat = new THREE.MeshBasicMaterial({ color: 0x7ec8ff, wireframe: true, transparent: true, opacity: 0.28 });
+    var glowMat = new THREE.MeshBasicMaterial({ color: 0xff3d1f, transparent: true, opacity: 0.75 });
+    var coreMat = new THREE.MeshBasicMaterial({ color: 0x3aa0ff, transparent: true, opacity: 0.2 });
 
     var robot = new THREE.Group();
 
@@ -310,7 +336,7 @@
     var spineGeo = new THREE.BufferGeometry().setFromPoints([
       new THREE.Vector3(0, 2.3, 0), new THREE.Vector3(0, 0.55, 0)
     ]);
-    robot.add(new THREE.Line(spineGeo, new THREE.LineBasicMaterial({ color: 0xe8a735, transparent: true, opacity: 0.3 })));
+    robot.add(new THREE.Line(spineGeo, new THREE.LineBasicMaterial({ color: 0x3aa0ff, transparent: true, opacity: 0.45 })));
 
     scene.add(robot);
 
@@ -324,7 +350,7 @@
       dPos[i*3+2] = (Math.random() - 0.5) * 5;
     }
     dGeo.setAttribute("position", new THREE.BufferAttribute(dPos, 3));
-    scene.add(new THREE.Points(dGeo, new THREE.PointsMaterial({ color: 0xe8a735, size: 0.02, transparent: true, opacity: 0.3 })));
+    scene.add(new THREE.Points(dGeo, new THREE.PointsMaterial({ color: 0xff3d1f, size: 0.02, transparent: true, opacity: 0.35 })));
 
     var clock = new THREE.Clock();
     var targetRotY = 0, targetRotX = 0;
@@ -383,7 +409,8 @@
     var canvas = document.getElementById("pageCanvas");
     if (!canvas || typeof THREE === "undefined") return;
 
-    var w = canvas.offsetWidth, h = canvas.offsetHeight;
+    var sz = canvasSize(canvas);
+    var w = sz.w, h = sz.h;
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
     camera.position.set(0, 6, 10);
@@ -391,13 +418,14 @@
 
     var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
     renderer.setSize(w, h);
+    renderer.setClearColor(0x05070e, 1);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
 
     var city = new THREE.Group();
-    var buildMat = new THREE.MeshBasicMaterial({ color: 0xf0ede8, wireframe: true, transparent: true, opacity: 0.12 });
-    var greenMat = new THREE.MeshBasicMaterial({ color: 0x6dbf6a, transparent: true, opacity: 0.25 });
-    var glowMat = new THREE.MeshBasicMaterial({ color: 0xe8a735, transparent: true, opacity: 0.4 });
-    var treeMat = new THREE.MeshBasicMaterial({ color: 0x6dbf6a, wireframe: true, transparent: true, opacity: 0.2 });
+    var buildMat = new THREE.MeshBasicMaterial({ color: 0xffd2c2, wireframe: true, transparent: true, opacity: 0.14 });
+    var greenMat = new THREE.MeshBasicMaterial({ color: 0xff8f6b, transparent: true, opacity: 0.22 });
+    var glowMat = new THREE.MeshBasicMaterial({ color: 0xffd24a, transparent: true, opacity: 0.45 });
+    var treeMat = new THREE.MeshBasicMaterial({ color: 0x6dbf6a, wireframe: true, transparent: true, opacity: 0.22 });
     var buildings = [];
 
     // Grid ground
@@ -509,7 +537,8 @@
     var canvas = document.getElementById("pageCanvas");
     if (!canvas || typeof THREE === "undefined") return;
 
-    var w = canvas.offsetWidth, h = canvas.offsetHeight;
+    var sz = canvasSize(canvas);
+    var w = sz.w, h = sz.h;
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
     camera.position.set(0, 0, 6);
@@ -517,6 +546,7 @@
     var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+    renderer.setClearColor(0x05070e, 1);
 
     var group = new THREE.Group();
     var wireMat = function (c) { return new THREE.MeshBasicMaterial({ color: c, wireframe: true, transparent: true, opacity: 0.25 }); };
@@ -609,7 +639,8 @@
     var canvas = document.getElementById("pageCanvas");
     if (!canvas || typeof THREE === "undefined") return;
 
-    var w = canvas.offsetWidth, h = canvas.offsetHeight;
+    var sz = canvasSize(canvas);
+    var w = sz.w, h = sz.h;
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(55, w / h, 0.1, 100);
     camera.position.set(0, 0, 5);
@@ -617,6 +648,7 @@
     var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+    renderer.setClearColor(0x05070e, 1);
 
     // Sacred geometry — wireframe icosahedron
     var sacredGeo = new THREE.IcosahedronGeometry(1.5, 1);
@@ -722,7 +754,8 @@
     var canvas = document.getElementById("pageCanvas");
     if (!canvas || typeof THREE === "undefined") return;
 
-    var w = canvas.offsetWidth, h = canvas.offsetHeight;
+    var sz = canvasSize(canvas);
+    var w = sz.w, h = sz.h;
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
     camera.position.set(0, 0, 6);
@@ -730,6 +763,7 @@
     var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: !isMobile });
     renderer.setSize(w, h);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+    renderer.setClearColor(0x05070e, 1);
 
     // Nodes
     var nodeCount = isMobile ? 30 : 60;
@@ -932,14 +966,16 @@
     });
 
     // --- Page-specific animations ---
-    if (currentPage === "about") initPrometheusAnimation();
+    // About interactive awakening is handled by pantheon.js
     initCounters();
   }
 
   // =============================================
-  // 7. PROMETHEUS INTERACTIVE ANIMATION
+  // 7. PROMETHEUS INTERACTIVE ANIMATION (legacy no-op)
+  // Replaced by pantheon.js awaken scene (hand → robot core)
   // =============================================
   function initPrometheusAnimation() {
+    return;
     var scene = document.getElementById("prometheusScene");
     var figure = document.getElementById("promFigure");
     var boulder = document.getElementById("promBoulder");
@@ -1515,7 +1551,7 @@
   initActiveNav();
   initAccessibility();
 
-  runLoader(function () {
+  function startExperience() {
     document.body.style.overflow = "";
     initCursor();
 
@@ -1536,6 +1572,10 @@
     if (currentPage === "contact") {
       initContactForm();
     }
+  }
+
+  runLoader(function () {
+    startExperience();
   });
 
 })();

@@ -28,8 +28,9 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="pantheon.css" />
 </head>
 <body data-page="cities">
 
@@ -40,7 +41,7 @@
   <div class="progress-bar" id="progressBar"></div>
 
   <!-- Page Transition -->
-  <div class="page-transition" id="pageTransition"></div>
+  <div class="page-transition" id="pageTransition"><div class="page-transition-inner"></div><div class="page-transition-flames" aria-hidden="true"></div></div>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
@@ -71,11 +72,20 @@
     <!-- Page Hero -->
     <section class="page-hero">
       <div class="page-hero-bg"></div>
-      <canvas class="page-hero-canvas" id="pageCanvas"></canvas>
       <div class="container">
         <span class="page-hero-label">04 — Solar Punk Cities</span>
         <h1 class="page-hero-title">Cities that give more than they <em>take.</em></h1>
-        <p class="page-hero-desc">Sustainable, technologically advanced urban ecosystems — living laboratories where humans and sentient machines coexist and thrive.</p>
+        <p class="page-hero-desc">Living temples of hearth and sky — urban ecosystems at epic scale, where craft, nature, and intelligence keep the eternal flame of civilization alight.</p>
+      </div>
+    </section>
+
+    <!-- Interactive city — below the opening mural -->
+    <section class="scene-stage section" aria-label="Interactive living city">
+      <div class="container">
+        <div class="scene-stage-frame">
+          <canvas class="scene-stage-canvas" id="pageCanvas"></canvas>
+        </div>
+        <p class="scene-stage-caption">A city that breathes — drift through regenerative towers and living green.</p>
       </div>
     </section>
 
@@ -237,6 +247,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="creation-opening.js"></script>
+  <script src="site-murals.js"></script>
+  <script src="pantheon.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
